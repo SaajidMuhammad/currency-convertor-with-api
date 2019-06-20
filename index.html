@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currency Convertor</title>
+    <link rel="stylesheet" href="css/bulma.min.css">
+</head>
+<body>
+    <header>
+        <h2>Currency Convertor</h2>
+    </header>
+    <hr>
+    <div>
+        <div id="curConvert">
+            <div>
+                <label for="">Enter the Amount</label>
+                <input type="number" id="lkrPrice">
+            </div>
+            <div>
+                <label for="">Select the Currency</label>
+                <select name="" id="listOfCurrency">
+                    <option value="">Select Currency</option>
+                    <option value="USD_LKR">USD - US Doller</option>
+                    <option value="EUR_LKR">EUR - Euro</option>
+                    <option value="INR_LKR">INR - Indian Rupees</option>
+                    <option value="GBP_LKR">GBP - British Pound</option>
+                    <option value="AUD_LKR">AUD - Austrailan Doller</option>
+                </select>
+            </div>
+            <div>
+                <button id="button1">Covert to LKR</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="convertedAmount">
+        <h2 id="answerHere"></h2>
+    </div>
+
+    <script src="js/myApp.js"></script>
+</body>
+</html>
