@@ -6,33 +6,73 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Currency Convertor</title>
     <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/my_style.css">
 </head>
 <body>
-    <header>
-        <h2>Currency Convertor</h2>
+    <header class="notification is-link has-text-centered">
+        <h2 class="title">My Currency Convertor</h2>
     </header>
-    <hr>
-    <div>
-        <div id="curConvert">
-            <div>
-                <label for="">Enter the Amount</label>
-                <input type="number" id="lkrPrice">
-            </div>
-            <div>
-                <label for="">Select the Currency</label>
-                <select name="" id="listOfCurrency">
-                    <option value="">Select Currency</option>
-                </select>
-            </div>
-            <div>
-                <button id="button1" class="button is-link">Covert to LKR</button>
+    <div class="container">
+        <div class="container box myBox" style="max-width: 600px;">
+            <div id="curConvert">
+                <div id="convertFrom">
+                    <!-- <h2 style="font-weight: bold; text-decoration: underline;">Enter your Amount and Currency</h2> -->
+                    <div class="field is-horizontal">
+                        <label for="" class="label">Amount to Transfer</label>
+                        <input type="number" id="myAmount" class="input is-medium"><br>
+                    </div>
+                    <p class="help is-danger" id="amountValidate"></p>
+                    
+                    <hr>
+                    <div class="field is-horizontal">
+                        <label for="" class="label" style="margin-right:25px;">Convert From </label>
+                        <div class="control">
+                            <div class="select is-medium">
+                                <select name="" id="listOfCurrency" style="width: 444.641px; box-sizing: border-box;">
+                                        <option value="">Select Currency</option>
+                                </select>
+                            </div>
+                            <p class="help is-danger" id="fromValidate"></p>
+                        </div>  
+                    </div>
+                </div>
+                <br>
+                <div id="ConvertTo">
+                    <!-- <h2 style="font-weight: bold; text-decoration: underline;">Select the Currency to convert</h2> -->
+                    <div class="field is-horizontal">
+                        <label for="" class="label" style="margin-right: 45px;">Convert To </label>
+                        <div class="control">
+                            <div class="select is-medium">
+                                <select name="" id="listOfCurrency1" style="width: 444.641px;">
+                                        <option value="">Select Currency</option>
+                                </select>
+                            </div>
+                            <p class="help is-danger" id="toValidate"></p>
+                        </div>  
+                    </div>
+                            
+                </div>
+                <br>
+                <div>
+                    <button id="button1" class="button is-link is-medium is-right">Click to Convert</button>
+                </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div id="convertedAmount">
-        <h2 id="answerHere"></h2>
-    </div>
+
+        <hr>
+        <div id="convertedAmount">
+            <div class="container box has-text-centered" style="max-width: 600px;">
+                <h2 id="resultHere"></h2>
+                <div class="content">
+                    <h1 class=subtitle> ** USD = **** LKR </h1>
+                    <p>on 2019.09.09</p>
+                </div>
+            </div>
+        </div>
+    </div><hr>
+    <footer class="hero-foot is-link footer has-text-centered">
+       <br> <p style="color:aliceblue;">© SAAJID MUHAMMAD  </p>
+    </footer>
 
     <script src="js/myApp.js"></script>
  
