@@ -6,11 +6,9 @@ window.onload = () => {
         return response.json();
     })
     .then(function(resp) {
-            // console.log(resp);
+
         let allCurrency = resp.results;
-            // console.log(allCurrency);
         let currencyCodes = Object.keys(allCurrency);
-            // console.log(currencyCodes);
 
         let list = document.getElementById('listOfCurrency');
         let list2 = document.getElementById('listOfCurrency1');
@@ -73,20 +71,24 @@ const convertCurrency = () => {
         return response.json();
       })
       .then(function(resp) {
-
-            let convertResult = resp; //answer        
-            console.log(convertResult);
             
-            // let answerHere = document.getElementById('resultHere');
-        
-            // answerHere.innerText = convertResult;
+            let idOfCurrency = selectedCurreny+'_'+convertFrom;
+            let singleCurrency = resp[idOfCurrency];  
+            let finalTransferRate = (myAmount*singleCurrency) 
+            let currentTime = new Date();
+            
+            let answerHere = document.getElementById('finalResult');
+            let currentDate = document.getElementById('currentDate');
+
+            answerHere.innerHTML = `<h6> ${myAmount} ${selectedCurreny} = ${finalTransferRate} ${convertFrom} </h6>`;
+            currentDate.innerHTML = `<p> on ${currentTime} </p>`
             button1.classList.remove("is-loading");
 
       }).catch(e => console.log(e))    
     }
 }
 
-var button = document.getElementById('button1');
+let button = document.getElementById('button1');
 button.addEventListener('click', convertCurrency);
 const baseEndpoint = 'https://free.currconv.com/api/v7/convert?';
 const APIkey = 'b2926387e0a03a02fa74';
